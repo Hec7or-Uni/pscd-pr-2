@@ -1,0 +1,16 @@
+# macros
+RM = /bin/rm -f  # para limpiar
+CC = g++         # para compilar
+#---------------------------------------------------------
+# opciones de compilación
+CPPFLAGS=-std=c++11 -pthread # opciones compilación
+#---------------------------------------------------------
+main_p2_e2: main_p2_e2.o
+	$(CC)  main_p2_e2.o -o main_p2_e2 $(CPPFLAGS)
+#---------------------------------------------------------
+main_p2_e2.o: main_p2_e2.cpp
+	$(CC) main_p2_e2.cpp -c $(CPPFLAGS)
+#---------------------------------------------------------
+clean:
+	$(RM) main_p2_e2
+	$(RM) main_p2_e2 main_p2_e2.o
